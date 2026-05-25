@@ -1,0 +1,109 @@
+# ===============================
+# macOS
+# ===============================
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ===============================
+# Java / Spring Boot
+# ===============================
+target/
+build/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.iml
+.mvn/
+.gradle/
+hs_err_pid*
+
+# ===============================
+# IDE - IntelliJ IDEA
+# ===============================
+.idea/
+*.iws
+*.ipr
+out/
+
+# ===============================
+# IDE - VS Code
+# ===============================
+.vscode/
+*.code-workspace
+
+# ===============================
+# IDE - Eclipse
+# ===============================
+.classpath
+.project
+.settings/
+.factorypath
+
+# ===============================
+# Node.js / React Native
+# ===============================
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.npm
+.pnp.*
+.yarn/
+
+# ===============================
+# React Native / iOS
+# ===============================
+ios/Pods/
+ios/build/
+ios/.xcode.env.local
+*.xcuserstate
+xcuserdata/
+DerivedData/
+
+# ===============================
+# React Native / Android
+# ===============================
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.keystore
+
+# ===============================
+# Environment Variables (NEVER commit!)
+# ===============================
+.env
+.env.local
+.env.*.local
+*.pem
+secrets.yml
+
+# ===============================
+# Database
+# ===============================
+*.sqlite
+*.db
+data/
+
+# ===============================
+# Logs & Temp Files
+# ===============================
+logs/
+*.log
+tmp/
+temp/
+
+# ===============================
+# OS / Editor Backups
+# ===============================
+*.swp
+*.swo
+*~
+# ===============================
+# Claude Code
+# ===============================
+.claude/
