@@ -5,6 +5,7 @@ import com.fuelbuddy.userservice.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import com.fuelbuddy.userservice.config.JwtUtil;
 
 @Service
 @RequiredArgsConstructor
@@ -12,6 +13,7 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final JwtUtil jwtUtil;
 
     public User signup(String email, String password, String name) {
 
@@ -31,5 +33,20 @@ public class UserService {
 
         // 4. Save to database
         return userRepository.save(newUser);
+    }
+
+    public String login(String email, String password) {
+
+        // 1. Find user by email
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("Invalid email or password"));
+
+        // 2. Check password
+        if (!passwordEncoder.matches(password, user.getPassword())) {
+            throw new RuntimeException("Invalid email or password");
+        }
+
+        // 3. Generate JWT token
+        return jwtUtil.generateToken(user.getEmail(), user.getId());
     }
 }
